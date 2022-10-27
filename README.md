@@ -2,3 +2,4 @@
 Hands-on scripts for training Kubernetes basics
 
 * *[Day One: Kubernetes 101](./day-one.md)*
+* *[Day Two: Kubernetes Resources](./day-two.md)*
