@@ -172,11 +172,11 @@ kubectl -n cert-manager get all
   ```
 **4. Create a Secret with Root CA certificate**
 ```
-kubectl create secret tls root-ca \
+kubectl -n cert-manager create secret tls root-ca \
 --cert=root-ca.crt \
 --key=root-ca.key
 ```
-**5. Create a ClusterIssuer for self-signed certificates**
+**5. Create a ClusterIssuer as CA Issuer**
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: cert-manager.io/v1
@@ -187,4 +187,106 @@ spec:
   ca:
     secretName: root-ca
 EOF
+```
+**6. Modify the ingress**
+```
+kubectl edit ingress bootcamp
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:                                              <<< Add
+    cert-manager.io/cluster-issuer: root-ca                 <<< Add
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP      <<< Add
+  creationTimestamp: "2022-10-20T01:30:11Z"
+  generation: 2
+  name: bootcamp
+  namespace: default
+  resourceVersion: "85051"
+  uid: 2c29ea14-77aa-483a-b5b1-6b141b49fd92
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: apps.test
+    http:
+      paths:
+      - backend:
+          service:
+            name: kubernetes-bootcamp
+            port:
+              number: 8080
+        path: /bootcamp
+        pathType: Exact
+  tls:                                                      <<< Add
+  - hosts:                                                  <<< Add
+    - apps.test                                             <<< Add
+    secretName: bootcamp-cert                               <<< Add
+status:
+  loadBalancer:
+    ingress:
+    - ip: 127.0.0.1
+```
+**7. Verify certificate creation**
+```
+kubectl get secret
+```
+*Output*
+```
+NAME                  TYPE     DATA   AGE
+bootcamp-cert-mqc64   Opaque   1      10m
+```
+**8. Start minikube tunnel**
+Open the other Ubuntu terminal. Type the following:
+```
+minikube tunnel
+```
+**9. Test access**
+```
+curl -H "Host: apps.test" https://localhost --insecure -vvv
+```
+*Output*
+```
+*   Trying 127.0.0.1:443...
+* TCP_NODELAY set
+* Connected to localhost (127.0.0.1) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/certs/ca-certificates.crt
+  CApath: /etc/ssl/certs
+* TLSv1.3 (OUT), TLS handshake, Client hello (1):
+* TLSv1.3 (IN), TLS handshake, Server hello (2):
+* TLSv1.3 (IN), TLS handshake, Encrypted Extensions (8):
+* TLSv1.3 (IN), TLS handshake, Certificate (11):
+* TLSv1.3 (IN), TLS handshake, CERT verify (15):
+* TLSv1.3 (IN), TLS handshake, Finished (20):
+* TLSv1.3 (OUT), TLS change cipher, Change cipher spec (1):
+* TLSv1.3 (OUT), TLS handshake, Finished (20):
+* SSL connection using TLSv1.3 / TLS_AES_256_GCM_SHA384
+* ALPN, server accepted to use h2
+* Server certificate:
+*  subject: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*  start date: Oct 27 09:04:34 2022 GMT
+*  expire date: Oct 27 09:04:34 2023 GMT
+*  issuer: O=Acme Co; CN=Kubernetes Ingress Controller Fake Certificate
+*  SSL certificate verify result: unable to get local issuer certificate (20), continuing anyway.
+* Using HTTP2, server supports multi-use
+* Connection state changed (HTTP/2 confirmed)
+* Copying HTTP/2 data in stream buffer to connection buffer after upgrade: len=0
+* Using Stream ID: 1 (easy handle 0x5602e1d8e8c0)
+> GET /bootcamp HTTP/2
+> Host:apps.test
+> user-agent: curl/7.68.0
+> accept: */*
+>
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* TLSv1.3 (IN), TLS handshake, Newsession Ticket (4):
+* old SSL session ID is stale, removing
+* Connection state changed (MAX_CONCURRENT_STREAMS == 128)!
+< HTTP/2 200
+< date: Thu, 27 Oct 2022 09:24:14 GMT
+< content-type: text/plain
+< strict-transport-security: max-age=15724800; includeSubDomains
+<
+Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-75c5d958ff-l7tjg | v=1
+* Connection #0 to host localhost left intact
 ```
