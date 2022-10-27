@@ -92,8 +92,8 @@ kubectl get services
 ```
 *Output*
 ```   
-NAME				     TYPE          CLUSTER-IP     EXTERNAL-IP   PORT(S)…
-kubernetes-bootcamp   NodePort    10.100.144.5      <none>              8080:31196/TC...
+NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP     PORT(S)…
+kubernetes-bootcamp   NodePort    10.100.144.5    <none>          8080:31196/TC...
 ```
 **7. Check the node and node IP where the pod is located**
 ```
@@ -210,8 +210,8 @@ kubectl edit deployment kubernetes-bootcamp
         terminationMessagePolicy: File
         volumeMounts:
         - name: server
-          mountPath: "/server.js”
-          subPath: “server.js”
+          mountPath: "/server.js"
+          subPath: "server.js"
           readOnly: true
       volumes:
          - name: server
