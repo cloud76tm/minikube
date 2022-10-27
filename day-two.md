@@ -165,7 +165,7 @@ kubectl describe service kubernetes-bootcamp
 Endpoints:                <none>
 …
 ```
-## *<u>Separate code from image using a ConfigMap</u>*
+## *<u>Separate config file from image using a ConfigMap</u>*
 
 **1. Copy app code from pod**
 ```
