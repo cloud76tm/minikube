@@ -9,3 +9,7 @@ Hands-on scripts for training Kubernetes basics
   * Separate config file from image using a ConfigMap
 * *[Day Three: Deploying Workloads](./day-three.md)*
   * Deploying Bookstack App
+* *[Day Four: Kubernetes Ecosystem](./day-four.md)*
+  * Ingiress NGINX: Expose a service using Ingress
+  * Prometheus Stack: Enable monitoring and alerting
+  * cert-manager: Securing a service

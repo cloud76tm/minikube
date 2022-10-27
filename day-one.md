@@ -1,6 +1,6 @@
 # **Day One: Kubernetes 101**
 
-## *<u>Create a Kubernetes cluster using minikube</u>*
+## *Create a Kubernetes cluster using minikube*
 
 ### **1. Check Windows version**  
   * Select Windows logo key + R, type winver

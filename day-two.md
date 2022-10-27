@@ -1,6 +1,6 @@
 # **Day Two: Kubernetes Resource**
 
-## *<u>Deploy an App with Deployment</u>*
+## *Deploy an App with Deployment*
 
 **1. Create a Deployment using kubectl**  
 Open a Ubuntu Terminal. Type the following:
@@ -76,7 +76,7 @@ root@<POD_NAME>:/# curl http://localhost:8080
 Hello Kubernetes bootcamp! | Running on: <POD_NAME> | v=1
 ```
 
-## *<u>Expose your App</u>*
+## *Expose your App*
 
 **1. Create a new service using kubectl**
 ```
@@ -165,7 +165,7 @@ kubectl describe service kubernetes-bootcamp
 Endpoints:                <none>
 …
 ```
-## *<u>Separate config file from image using a ConfigMap</u>*
+## *Separate config file from image using a ConfigMap*
 
 **1. Copy app code from pod**
 ```

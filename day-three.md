@@ -1,6 +1,6 @@
 # **Day Three: Deploying Workloads**
 
-## *<u>Install & Setup NFS Provisioner Operator</u>*
+## *Install & Setup NFS Provisioner Operator*
 
 **1. Install Operator Lifecycle Manager (OLM)**
 ```
@@ -47,7 +47,7 @@ kubectl -n kube-system get pvc
 kubectl get sc
 ```
 
-## *<u>Deploying a MariaDB using Helm</u>*
+## *Deploying a MariaDB using Helm*
 
 **1. Install Helm**
 ```
@@ -101,7 +101,7 @@ Query OK, 0 rows affected (0.036 sec)
 MariaDB [(none)]> 
 ```
 
-## *<u>Create a ConfigMap, Secret and PVC</u>*
+## *Create a ConfigMap, Secret and PVC*
 
 **1. Create a ConfigMap for Bookstack Config**
 ```
@@ -136,7 +136,7 @@ spec:
 EOF
 ```
 
-## *<u>Create a Deployment</u>*
+## *Create a Deployment*
 
 **1. Create a Deployment**
 ```
@@ -205,7 +205,7 @@ s6-rc: info: service 99-ci-service-check: starting
 s6-rc: info: service 99-ci-service-check successfully started
 ```
 
-## *<u>Expose the Deployment</u>*
+## *Expose the Deployment*
 
 **1. Expose the Deployment**
 ```
