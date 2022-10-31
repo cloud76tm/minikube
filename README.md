@@ -13,3 +13,6 @@ Hands-on scripts for training Kubernetes basics
   * Ingiress NGINX: Expose a service using Ingress
   * Prometheus Stack: Enable monitoring and alerting
   * cert-manager: Securing a service
+* *[Day Five: Administer a Kubernetes Cluster](./day-four.md)*
+  * Manage Pod Resources
+  * Declare Network Policy

@@ -234,7 +234,7 @@ kubectl get secret
 NAME                  TYPE     DATA   AGE
 bootcamp-cert-mqc64   Opaque   1      10m
 ```
-**8. Start minikube tunnel**
+**8. Start minikube tunnel**  
 Open the other Ubuntu terminal. Type the following:
 ```
 minikube tunnel

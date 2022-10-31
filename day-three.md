@@ -74,8 +74,10 @@ helm install mariadb --namespace bookstack --create-namespace \
 --set auth.replicationPassword=p@ssw0rd  \
 --set primary.persistence.storageClass=standard \
 --set primary.persistence.size=4Gi \
+--set primary.nodeSelector="kubernetes.io/hostname: minikube-m02" \
 --set secondary.persistence.storageClass=standard \
 --set secondary.persistence.size=4Gi \
+--set secondary.nodeSelector="kubernetes.io/hostname: minikube-m02" \
 bitnami/mariadb
 ```
 **6. Verify installation**
