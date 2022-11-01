@@ -1,5 +1,5 @@
-# Kubernetes Fundamentals for Administrators
-Hands-on scripts for training Kubernetes basics
+**IBM Korea OSS Training**: Kubernetes Fundamentals for Administrators
+# *H*ands-on scripts for training Kubernetes basics*
 
 * *Day One: Kubernetes 101*
   * [Create a Kubernetes cluster using minikube](./hands-on-scripts/day-1/1.md)
