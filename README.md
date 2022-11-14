@@ -19,40 +19,20 @@
   * [Upgrade a Cluster](./hands-on-scripts/day-5/3.md)
 
 
+# Lab Environment
 
+![img](./image/lab.drawio.png)
 
+## Lab Servers
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```
-jw.shin85@hanwha.com
-sanghyeok.chung@hanwha.com
-jurikim@hanwha.com
-s.kim1521@hanwha.com
-imsh.001@hanwha.com
-dahyekim@hanwha.com
-wjdtjsdlf210@hanwha.com
-go5man@hanwha.com
-```
-
-
-
-
-
-
+  No|User Mail|Lab Server|IP Address|User
+  ---|---|---|---|---
+  1|jw.shin85@hanwha.com|minikube-1|172.24.2.121|ubuntu
+  2|sanghyeok.chung@hanwha.com|minikube-2|172.24.2.221|ubuntu
+  3|jurikim@hanwha.com|minikube-3|172.24.1.248|ubuntu
+  4|s.kim1521@hanwha.com|minikube-4|172.24.1.89|ubuntu
+  5|imsh.001@hanwha.com|minikube-5|172.24.2.213|ubuntu
+  6|dahyekim@hanwha.com|minikube-6|172.24.2.84|ubuntu
+  7|wjdtjsdlf210@hanwha.com|minikube-7|172.24.2.166|ubuntu
+  8|go5man@hanwha.com|minikube-8|172.24.2.101|ubuntu
 
