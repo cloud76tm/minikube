@@ -17,3 +17,42 @@
   * [Manage Pod Resources](./hands-on-scripts/day-5/1.md)
   * [Declare Network Policy](./hands-on-scripts/day-5/2.md)
   * [Upgrade a Cluster](./hands-on-scripts/day-5/3.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+jw.shin85@hanwha.com
+sanghyeok.chung@hanwha.com
+jurikim@hanwha.com
+s.kim1521@hanwha.com
+imsh.001@hanwha.com
+dahyekim@hanwha.com
+wjdtjsdlf210@hanwha.com
+go5man@hanwha.com
+```
+
+
+
+
+
+
+
