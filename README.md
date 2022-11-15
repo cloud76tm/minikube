@@ -31,8 +31,10 @@
   2|sanghyeok.chung@hanwha.com|minikube-2|172.24.2.221|ubuntu
   3|jurikim@hanwha.com|minikube-3|172.24.1.248|ubuntu
   4|s.kim1521@hanwha.com|minikube-4|172.24.1.89|ubuntu
-  5|imsh.001@hanwha.com|minikube-5|172.24.2.213|ubuntu
+  5||minikube-5|172.24.2.213|ubuntu
   6|dahyekim@hanwha.com|minikube-6|172.24.2.84|ubuntu
   7|wjdtjsdlf210@hanwha.com|minikube-7|172.24.2.166|ubuntu
   8|go5man@hanwha.com|minikube-8|172.24.2.101|ubuntu
+  9||minikube-9|172.24.1.216|ubuntu
+  10|imsh.001@hanwha.com|minikube-10|172.24.2.136|ubuntu
 
